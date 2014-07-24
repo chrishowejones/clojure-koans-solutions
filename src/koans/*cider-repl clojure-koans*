@@ -1,0 +1,88 @@
+; CIDER 0.5.0 (Clojure 1.5.1, nREPL 0.2.3)
+koan-engine.runner> (use 'koans.17-macros)
+CompilerException java.lang.RuntimeException: Unable to resolve symbol: form in this context, compiling:(koans/17_macros.clj:45:9) 
+koan-engine.runner> (macroexpand '(r-infix (10 + (2 * 3) + (4 * 5))))
+(r-infix (10 + (2 * 3) + (4 * 5)))
+koan-engine.runner> (macroexpand '(r-infix (10 + (2 * 3) + (4 * 5))))
+(r-infix (10 + (2 * 3) + (4 * 5)))
+koan-engine.runner> (macroexpand-1 '(r-infix (10 + (2 * 3) + (4 * 5))))
+(r-infix (10 + (2 * 3) + (4 * 5)))
+koan-engine.runner> (macroexpand-1 '(r-infix (10 + (2 * 3) + (4 * 5))))
+(r-infix (10 + (2 * 3) + (4 * 5)))
+koan-engine.runner> (macroexpand '(r-infix (10 + (2 * 3) + (4 * 5))))
+(r-infix (10 + (2 * 3) + (4 * 5)))
+koan-engine.runner> (macroexpand '(infix (9 + 1)))
+(infix (9 + 1))
+koan-engine.runner> (use 'koans.17-macros :reload)
+nil
+koan-engine.runner> (macroexpand '(infix (9 + 1)))
+(+ 9 1)
+koan-engine.runner> (macroexpand '(r-infix (10 + (2 * 3) + (4 * 5))))
+(+ (koans.17-macros/r-infix 10) (koans.17-macros/r-infix ((2 * 3) + (4 * 5))))
+koan-engine.runner> (macroexpand-1 '(r-infix (10 + (2 * 3) + (4 * 5))))
+(+ (koans.17-macros/r-infix 10) (koans.17-macros/r-infix ((2 * 3) + (4 * 5))))
+koan-engine.runner> (macroexpand '(r-infix (10 + (2 * 3) + (4 * 5))))
+(+ (koans.17-macros/r-infix 10) (koans.17-macros/r-infix ((2 * 3) + (4 * 5))))
+koan-engine.runner> (macroexpand '(r-infix 10))
+10
+koan-engine.runner> (present (Razzle. "Worst Picture") "Final Destination 5")
+CompilerException java.lang.RuntimeException: Unable to resolve symbol: present in this context, compiling:(/private/var/folders/n5/sn1v_9k94dd50ywj9pr5_lw80000gn/T/form-init3936388931177233207.clj:1:1) 
+koan-engine.runner> (present (Razzie. "Worst Picture") "Final Destination 5")
+CompilerException java.lang.RuntimeException: Unable to resolve symbol: present in this context, compiling:(/private/var/folders/n5/sn1v_9k94dd50ywj9pr5_lw80000gn/T/form-init3936388931177233207.clj:1:1) 
+koan-engine.runner> (Razzie. "Worst Picture")
+CompilerException java.lang.IllegalArgumentException: Unable to resolve classname: Razzie, compiling:(/private/var/folders/n5/sn1v_9k94dd50ywj9pr5_lw80000gn/T/form-init3936388931177233207.clj:1:1) 
+koan-engine.runner> (use 'koans.18-datatypes)
+nil
+koan-engine.runner> (Razzie. "Worst Picture")
+CompilerException java.lang.IllegalArgumentException: Unable to resolve classname: Razzie, compiling:(/private/var/folders/n5/sn1v_9k94dd50ywj9pr5_lw80000gn/T/form-init3936388931177233207.clj:1:1) 
+koan-engine.runner> (Razzie. "Worst Picture")
+CompilerException java.lang.IllegalArgumentException: Unable to resolve classname: Razzie, compiling:(/private/var/folders/n5/sn1v_9k94dd50ywj9pr5_lw80000gn/T/form-init3936388931177233207.clj:1:1) 
+koan-engine.runner> (use 'koans.18-datatypes :reload)
+nil
+koan-engine.runner> (Razzie. "Worst Picture")
+CompilerException java.lang.IllegalArgumentException: Unable to resolve classname: Razzie, compiling:(/private/var/folders/n5/sn1v_9k94dd50ywj9pr5_lw80000gn/T/form-init3936388931177233207.clj:1:1) 
+koan-engine.runner> (Razzie. "Worst Picture")
+CompilerException java.lang.IllegalArgumentException: Unable to resolve classname: Razzie, compiling:(/private/var/folders/n5/sn1v_9k94dd50ywj9pr5_lw80000gn/T/form-init3936388931177233207.clj:1:1) 
+koan-engine.runner> (use 'koans.18-datatypes :reload)
+nil
+koan-engine.runner> (Razzie. "Worst Picture")
+CompilerException java.lang.IllegalArgumentException: Unable to resolve classname: Razzie, compiling:(/private/var/folders/n5/sn1v_9k94dd50ywj9pr5_lw80000gn/T/form-init3936388931177233207.clj:1:1) 
+koan-engine.runner> (deftype Razzie [category])
+CompilerException java.lang.IllegalStateException: ->Razzie already refers to: #'koans.18-datatypes/->Razzie in namespace: koan-engine.runner, compiling:(/private/var/folders/n5/sn1v_9k94dd50ywj9pr5_lw80000gn/T/form-init3936388931177233207.clj:1:1) 
+koan-engine.runner> (type Razzie)
+CompilerException java.lang.RuntimeException: Unable to resolve symbol: Razzie in this context, compiling:(/private/var/folders/n5/sn1v_9k94dd50ywj9pr5_lw80000gn/T/form-init3936388931177233207.clj:1:1) 
+koan-engine.runner> (Razzie. "Worst Picture")
+CompilerException java.lang.IllegalArgumentException: Unable to resolve classname: Razzie, compiling:(/private/var/folders/n5/sn1v_9k94dd50ywj9pr5_lw80000gn/T/form-init3936388931177233207.clj:1:1) 
+koan-engine.runner> (deftype TestType [category])
+koan_engine.runner.TestType
+koan-engine.runner> (TestType. "Fred")
+#<TestType koan_engine.runner.TestType@11e26eac>
+koan-engine.runner> (def my-type (TestType. "Fred"))
+#'koan-engine.runner/my-type
+koan-engine.runner> (.category my-type)
+"Fred"
+koan-engine.runner> (use 'koans.18-datatypes :reload)
+nil
+koan-engine.runner> (Razzie. "Worst Picture")
+CompilerException java.lang.IllegalArgumentException: Unable to resolve classname: Razzie, compiling:(/private/var/folders/n5/sn1v_9k94dd50ywj9pr5_lw80000gn/T/form-init3936388931177233207.clj:1:1) 
+koan-engine.runner> (Razzie. "Worst Picture")
+CompilerException java.lang.IllegalArgumentException: Unable to resolve classname: Razzie, compiling:(/private/var/folders/n5/sn1v_9k94dd50ywj9pr5_lw80000gn/T/form-init3936388931177233207.clj:1:1) 
+You're really the Worst Picture
+You're really the Worst Picture, Fred... sorry.
+koan-engine.runner> (javadoc "warfare")
+"http://java.sun.com/javase/7/docs/api/java/lang/String.html"
+koan-engine.runner> (class "warfare")
+java.lang.String
+koan-engine.runner> (javadoc java.util.concurrent.CountDownLatch)
+"http://java.sun.com/javase/7/docs/api/java/util/concurrent/CountDownLatch.html"
+koan-engine.runner>  (Math/pow 2 10)
+1024.0
+koan-engine.runner> (partition 3 [:a :b :c :d :e])
+((:a :b :c))
+koan-engine.runner> (partition 3 (range 13))
+((0 1 2) (3 4 5) (6 7 8) (9 10 11))
+koan-engine.runner> (range 13)
+(0 1 2 3 4 5 6 7 8 9 10 11 12)
+koan-engine.runner> (partition 3 2 (range 13))
+((0 1 2) (2 3 4) (4 5 6) (6 7 8) (8 9 10) (10 11 12))
+koan-engine.runner> (partition 3 5 (range 13))
